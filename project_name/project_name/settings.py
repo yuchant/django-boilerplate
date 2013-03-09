@@ -1,4 +1,4 @@
-# Django settings for baston project.
+# Django settings for project_name project.
 import os
 
 SETTINGS_DIR = os.path.dirname(__file__)
@@ -107,10 +107,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'baston.urls'
+ROOT_URLCONF = 'project_name.root_urlconf'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'baston.wsgi.application'
+WSGI_APPLICATION = 'project_name.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
