@@ -1,0 +1,37 @@
+.responsive-debug-container {
+  text-align: center;
+  color: gray;
+}
+.responsive-debug-container .responsive-debug {
+  color: white;
+  font-weight: bold;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+  .responsive-debug:after {
+    content: 'media-4+';
+  }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  .responsive-debug:after {
+    content: 'media-3 to media-4-max';
+  }
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .responsive-debug:after {
+    content: 'media-2 to media-3-max';
+  }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .responsive-debug:after {
+    content: '-media-2-max';
+  }
+}
+/* Landscape phones and down */
+@media (max-width: 479px) {
+  .responsive-debug:after {
+    content: '-media-1-max';
+  }
+}
