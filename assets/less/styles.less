@@ -1,0 +1,54 @@
+
+
+.responsive-debug-container {
+    color:gray;
+    .responsive-debug {
+        color:white;
+        font-weight:bold;
+    }
+}
+
+/* Large desktop */
+@media-4: 1200px;
+@media-4-max:1199px;
+@media-3: 980px;
+@media-3-max: 979px;
+@media-2: 768px;
+@media-2-max:767px;
+@media-1: 480px;
+@media-1-max: 479px;
+
+@media (min-width: @media-4) {
+    .responsive-debug:after {
+        content: 'media-4+';
+    }
+}    
+ 
+@media (min-width:@media-3) and (max-width: @media-4-max) {
+    .responsive-debug:after {
+        content: 'media-3 to media-4-max';
+    }
+}
+/* Portrait tablet to landscape and desktop */
+
+@media (min-width: @media-2) and (max-width: @media-3-max) { 
+    .responsive-debug:after {
+        content: 'media-2 to media-3-max';
+    }
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: @media-2-max) {
+    .responsive-debug:after {
+        content: '-media-2-max';
+    }
+
+}
+/* Landscape phones and down */
+@media (max-width: @media-1-max) { 
+    .responsive-debug:after {
+        content: '-media-1-max';
+    }
+
+}

@@ -57,14 +57,19 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-    {% block body %}
-        <!--[if lt IE 7]>
-        <div class="chromeframe">
-            You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.
-        </div>
-        <![endif]-->
-        {% block content %}
-        {% endblock content %}
-    {% endblock body %}
+
+        <div class="responsive-debug-container">
+            Responsive debug (remove at templates/theme.html):
+            <span class="responsive-debug"></span>
+        </div><!-- debug responsive styles -->
+        {% block body %}
+            <!--[if lt IE 7]>
+            <div class="chromeframe">
+                You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.
+            </div>
+            <![endif]-->
+            {% block content %}
+            {% endblock content %}
+        {% endblock body %}
     </body>
 </html>
