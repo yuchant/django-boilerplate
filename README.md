@@ -166,12 +166,12 @@ The reason I do this is because I want my django project to be in a folder in my
 
 I'd recommend the following setup:
 
-1: create a virtualenv `virtualenv example.com`
-2: cd into it `cdvirtualenv`
-3: Create the django project `django-admin.py startproject django_project --template=https://github.com/yuchant/django-boilerplate/archive/master.zip` 
-4: cd into the django project container `cd django_project`
-5: install the dependencies: `pip install -r requirements.txt`
-6: cd into the django project itself: `cd django_project`
-7: syncdb: `python manage.py syncdb`
-8: migrate: `python manage.py migrate`
-9: run your dev server: `python manage.py runserver`
+1. create a virtualenv `virtualenv example.com`
+2. cd into it `cdvirtualenv`
+3. Create the django project `django-admin.py startproject django_project --template=https://github.com/yuchant/django-boilerplate/archive/master.zip` 
+4. cd into the django project container `cd django_project`
+5. install the dependencies: `pip install -r requirements.txt`
+6. cd into the django project itself: `cd django_project`
+7. syncdb: `python manage.py syncdb`
+8. migrate: `python manage.py migrate`
+9. run your dev server: `python manage.py runserver`
