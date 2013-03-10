@@ -6,11 +6,6 @@ My plot for world domination is stagnating due to wasted time loading the same p
 World domination can't wait.
 
 
-# Quick Links
-
-- (Installation)[#installation--usage]
-- (Responsive Design Helpers)[#responsive-design-helpers]
-
 ###Django
 
 - Hell yes we'll use the admin, are you freakin kidding me?
