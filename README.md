@@ -107,11 +107,11 @@ Either clone the repository and take the contents, or use it as a template provi
 
 ## Folder Structure
 
-Note: I've set this up to build the project container folder so you will get a triple nested structure if you don't change the name of the root project fodler after running `startproject`. 
+Note: I've set this up to build the project container folder as well as the django project root, so you will get a triple nested structure if you don't change the name of the root project folder after running `startproject`. 
 
 Example:
 
-    $ django-admin.py startproject my_awesome_site
+    $ django-admin.py startproject my_project
 
 Will result in a structure like so:
 
@@ -120,7 +120,7 @@ Will result in a structure like so:
             ├── my_project
 
 
-So rename the top-level my_project to something generic.
+So rename the top-level my_project to something generic. It's not required, but something just feels *off* about that idea.
 
 The reason I do this is because I want my django project to be in a folder in my virtualenv simply called "django_project". It needs to be consistent across sites so I can easily crawl directories for `django_project/conf/` and auto register supervisor scripts, nginx configurations, etc for multiple sites on one server.
 
@@ -149,9 +149,6 @@ The reason I do this is because I want my django project to be in a folder in my
     │   │   ├── templates
     │   │   │   ├── 404.html
     │   │   │   ├── 500.html
-    │   │   │   ├── _base.html
-    │   │   │   ├── base.html
-    │   │   │   ├── home.html
     │   │   │   └── theme.html
     │   │   └── website
     │   │       ├── __init__.py
