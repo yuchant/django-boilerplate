@@ -10,7 +10,9 @@ World domination can't wait.
 
 - Hell yes we'll use the admin, are you freakin kidding me?
 - Uses relative settings directory with `PROJECT_DIR` and `SETTINGS_DIR`. How many times have I written that?
-- Global templates dir, `MEDIA_ROOT = 'site_media'`, ` `STATICFILES_DIRS = 'assets'`
+- Global templates dir in project root.
+- `MEDIA_ROOT = 'site_media'`
+- `STATICFILES_DIRS = 'assets'`
 - Why don't we call the `ROOT_URLCONF` `root_urlconf.py` so it can be fuzzy differentiated vs 1000 other `urls.py` mmkay?
 - Use SQLITE by default. If you need to change it, you'd have to change it anyways.
 - No, we don't need to add anything in the user uploads directory to git.
@@ -22,11 +24,11 @@ World domination can't wait.
 
 Yeah that's right... there are some apps that are unquestionably useful.
 
-- Django Extensions. I know how much you like importing apps in the shell, but seriously, get over it.
-- South. Without database migrations, you are nothing. http://south.aeracode.org/
-- Pillow. Python Imaging Library with a better success rate. We like `ImageField` don't we?
-- Django Debug Tolbar. This is what the `__unicode__` method that eats 100 queries per object listing doesn't want you to know.
-- Fabric. Something that I only install when I've already repeated `ssh login, git pull, restart server` at least 100,000 times. Just have it from day one.
+- Django Extensions: I know how much you like importing apps in the shell, but seriously, get over it.
+- South: Without database migrations, you are nothing. http://south.aeracode.org/
+- Pillow: Python Imaging Library with a better success rate. We like `ImageField` don't we?
+- Django Debug Tolbar: The `__unicode__` method you wrote that eats 100 queries per object listing doesn't want you to know about this.
+- Fabric: Something that I only install when I've already repeated `ssh login, git pull, restart server` at least 100,000 times. Save yourself the trouble.
 
 
 ###Questionably forcibly installed django apps
@@ -36,7 +38,7 @@ I feel like these apps are used enough to warrant auto inclusion and explicit re
 - Mailer. Don't we need to send emails?
 - Sorl Thumbnails. Sometimes I don't use it, but only because *it's not installed already* and I am lazy.
 - Gunicorn. Yeah, you might not be using it. You'll thank me later.
-- PyLibMC. Django is as fast as a rock on steroids. There's no reason not to set up a tiny `memcached` server and enable the cache middleware.
+- ~~PyLibMC. Django is as fast as a rock on steroids. There's no reason not to set up a tiny `memcached` server and enable the cache middleware.~~ The only reason not to include this is because it requires `memcached` to be installed.
 
 
 ###HTML:

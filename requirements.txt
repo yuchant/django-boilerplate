@@ -5,5 +5,6 @@ sorl-thumbnail
 django-mailer
 fabric
 gunicorn
-pylibmc
 django-debug-toolbar
+django-extensions
+django-model-utils
