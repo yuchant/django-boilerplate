@@ -1,4 +1,4 @@
-Bootstrap + HTML5 Boilerplate + Common Packages, *Tomita Style.*
+Bootstrap + HTML5 Boilerplate + Common Packages, Tomita Style.
 ---------------------------------------
 
 My plot for world domination is stagnating due to wasted time loading the same plugins, configuring comically similar projects, and feeling utterly lazy about adding jQuery easing just because I'd have to go google it.
