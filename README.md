@@ -175,3 +175,12 @@ I'd recommend the following setup:
 7. syncdb: `python manage.py syncdb`
 8. migrate: `python manage.py migrate`
 9. run your dev server: `python manage.py runserver`
+
+
+# Todo
+
+## Fabfile Auto Generation
+
+- Some clever fabric script auto generation would be great.
+- We can access django's settings file and thus lots of the raw fabric file!
+
