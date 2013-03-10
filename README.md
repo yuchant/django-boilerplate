@@ -1,18 +1,43 @@
-Django Boilerplate Project Tomita Style
+Bootstrap + HTML5 Boilerplate + Common Packages, *Tomita Style.*
 ---------------------------------------
 
-Bootstrap + HTML5 Boilerplate, just tomita style.
+My plot for world domination is stagnating due to wasted time loading the same plugins, configuring comically similar projects, and feeling utterly lazy about adding jQuery easing just because I'd have to go google it.
 
-That just means there's a lot of things I find convenient in this. You may enjoy it as well.
+World domination can't wait. 
 
-- Responsive design debugging snippet at top that displasy current range.
-- Media querys conceptually simplified to `media-1` `media-1-max`, etc.
-- No crazy scripts at the bottom causing issues with inline scripts / jquery / etc.
-- Assumes assets/less compiled to assets/css
-- Uses relative settings directory paths by default
-- I'm sure this will be out dated. Sorry.
-- Global templates dir
-- Starts with `website` app for static pages.
+**HTML:**
+
+- Media queryies are WTF confusing. I conceptually simplified `portrait phone`, `landscape phone`, `default`, `desktop` to  `media-1` `media-1-max`, etc. so my feeble brain can grasp this nonsense.
+- Responsive design debugging snippet at top that displays current bootstrap media range.
+
+- No crazy scripts at the bottom causing issues with inline scripts / jquery / etc. F' that! Please go save .1 seconds elsewhere.
+- Less is awesome. Never leave home without it.
+
+**Django:**
+
+- Uses relative settings directory with `PROJECT_DIR` and `SETTINGS_DIR`. How many times have I written that?
+- Global templates dir, MEDIA_ROOT == site_media, assets = static files
+- Start with `website` app for static pages.
+- Freakin call the `ROOT_URLCONF` `root_urlconf.py` so it can be fuzzy differentiated vs 1000 other `urls.py`
+- Use SQLITE by default. If you need to change it, you'd have to change it anyways.
+- No, we don't need to add anything in the user uploads directory to git.
+- Hell yes we'll use the admin, are you kidding me?
+
+
+**General**
+
+- I hate you, .DS_Store. 
+
+
+## Common Packages
+
+Common packages are included with commented out script tags in the base theme for easy awesomeness.
+
+- jQuery Easing: http://gsgd.co.uk/sandbox/jquery/easing/ 
+- jQuery Validation: http://bassistance.de/jquery-plugins/jquery-plugin-validation/
+- jQuery Lazy Load: http://www.appelsiini.net/projects/lazyload
+- 
+
 
 ## Responsive design helpers
 
