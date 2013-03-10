@@ -5,26 +5,48 @@ My plot for world domination is stagnating due to wasted time loading the same p
 
 World domination can't wait.
 
-**HTML:**
 
+###HTML:
+
+- Bootstrap
 - Media queryies are WTF confusing. I conceptually simplified `portrait phone`, `landscape phone`, `default`, `desktop` to  `media-1` `media-1-max`, etc. so my feeble brain can grasp this nonsense.
 - Responsive design debugging snippet at top that displays current bootstrap media range.
-- No crazy scripts at the bottom causing issues with inline scripts / jquery / etc. F' that! Please go save .1 seconds elsewhere.
+- No crazy scripts at the bottom causing issues with inline scripts / jquery / etc. F' that! If you want to be that cool, please spent .2 seconds moving the script.
 - Less is awesome. Never leave home without it.
 
-**Django:**
+
+###Django
 
 - Hell yes we'll use the admin, are you kidding me?
 - Uses relative settings directory with `PROJECT_DIR` and `SETTINGS_DIR`. How many times have I written that?
 - Global templates dir, `MEDIA_ROOT = 'site_media'`, ` `STATICFILES_DIRS = 'assets'`
-- Freakin call the `ROOT_URLCONF` `root_urlconf.py` so it can be fuzzy differentiated vs 1000 other `urls.py`
+- Why don't we call the `ROOT_URLCONF` `root_urlconf.py` so it can be fuzzy differentiated vs 1000 other `urls.py` mmkay?
 - Use SQLITE by default. If you need to change it, you'd have to change it anyways.
 - No, we don't need to add anything in the user uploads directory to git.
-- Start with `website` app for static pages.
+- Serve files from `MEDIA_ROOT` @ `MEDIA_URL` when in `DEBUG_MODE`. Runserver now serves `staticfiles` automagically, why the hell not `MEDIA_ROOT`?
+- Start with `website` app for static pages and it even comes with an `IndexView`, imagine that!
 
-**General**
 
-- I hate you .DS_Store. Sincerely, me.
+###Forcibly installed django apps
+
+Yeah that's right... there are some apps that are unquestionably useful.
+
+- Django Extensions. I know how much you like importing apps in the shell, but seriously, get over it.
+- South. Without database migrations, you are nothing. http://south.aeracode.org/
+- Pillow. Python Imaging Library with a better success rate. We like `ImageField` don't we?
+- Django Debug Tolbar. This is what the `__unicode__` method that eats 100 queries per object listing doesn't want you to know.
+- Fabric. Something that I only install when I've already repeated `ssh login, git pull, restart server` at least 100,000 times. Just have it from day one.
+
+
+###Questionably forcibly installed django apps
+
+I feel like these apps are used enough to warrant auto inclusion and explicit removal.
+
+- Mailer. Don't we need to send emails?
+- Sorl Thumbnails. Sometimes I don't use it, but only because *it's not installed already* and I am lazy.
+- Gunicorn. Yeah, you might not be using it. You'll thank me later.
+- PyLibMC. Django is as fast as a rock on steroids. There's no reason not to set up a tiny `memcached` server and enable the cache middleware.
+
 
 
 ## Common Packages

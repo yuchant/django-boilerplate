@@ -1,0 +1,9 @@
+django
+south
+pillow
+sorl-thumbnail
+django-mailer
+fabric
+gunicorn
+pylibmc
+django-debug-toolbar
