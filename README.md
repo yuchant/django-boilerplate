@@ -6,15 +6,6 @@ My plot for world domination is stagnating due to wasted time loading the same p
 World domination can't wait.
 
 
-###HTML:
-
-- Bootstrap
-- Media queryies are WTF confusing. I conceptually simplified `portrait phone`, `landscape phone`, `default`, `desktop` to  `media-1` `media-1-max`, etc. so my feeble brain can grasp this nonsense.
-- Responsive design debugging snippet at top that displays current bootstrap media range.
-- No crazy scripts at the bottom causing issues with inline scripts / jquery / etc. F' that! If you want to be that cool, please spent .2 seconds moving the script.
-- Less is awesome. Never leave home without it.
-
-
 ###Django
 
 - Hell yes we'll use the admin, are you kidding me?
@@ -47,6 +38,14 @@ I feel like these apps are used enough to warrant auto inclusion and explicit re
 - Gunicorn. Yeah, you might not be using it. You'll thank me later.
 - PyLibMC. Django is as fast as a rock on steroids. There's no reason not to set up a tiny `memcached` server and enable the cache middleware.
 
+
+###HTML:
+
+- Bootstrap
+- Media queryies are WTF confusing. I conceptually simplified `portrait phone`, `landscape phone`, `default`, `desktop` to  `media-1` `media-1-max`, etc. so my feeble brain can grasp this nonsense.
+- Responsive design debugging snippet at top that displays current bootstrap media range.
+- No crazy scripts at the bottom causing issues with inline scripts / jquery / etc. F' that! If you want to be that cool, please spent .2 seconds moving the script.
+- Less is awesome. Never leave home without it.
 
 
 ## Common Packages
