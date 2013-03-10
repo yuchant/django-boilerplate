@@ -6,6 +6,11 @@ My plot for world domination is stagnating due to wasted time loading the same p
 World domination can't wait.
 
 
+# Quick Links
+
+- (Installation)[#installation--usage]
+- (Responsive Design Helpers)[#responsive-design-helpers]
+
 ###Django
 
 - Hell yes we'll use the admin, are you freakin kidding me?
@@ -38,15 +43,15 @@ I feel like these apps are used enough to warrant auto inclusion and explicit re
 - Mailer. Don't we need to send emails?
 - Sorl Thumbnails. Sometimes I don't use it, but only because *it's not installed already* and I am lazy.
 - Gunicorn. Yeah, you might not be using it. You'll thank me later.
-- ~~PyLibMC. Django is as fast as a rock on steroids. There's no reason not to set up a tiny `memcached` server and enable the cache middleware.~~ The only reason not to include this is because it requires `memcached` to be installed.
+- ~~PyLibMC. Django is as fast as a rock on steroids. There's no reason not to set up a tiny `memcached` server and enable the cache middleware.~~ The only reason not to include this is because it requires a non python dependency (memcached itself.)
 
 
 ###HTML:
 
 - Bootstrap
-- Media queryies are WTF confusing. I conceptually simplified `portrait phone`, `landscape phone`, `default`, `desktop` to  `media-1` `media-1-max`, etc. so my feeble brain can grasp this nonsense.
+- Media queryies are WTF confusing. I conceptually simplified `portrait phone`, `landscape phone`, `default`, `desktop` to  `media-1`, `media-1-max`, `media-2`, etc. so my feeble brain can grasp this nonsense.
 - Responsive design debugging snippet at top that displays current bootstrap media range.
-- No crazy scripts at the bottom causing issues with inline scripts / jquery / etc. F' that! If you want to be that cool, please spent .2 seconds moving the script.
+- No crazy scripts at the bottom causing issues with inline scripts that need jQuery. F' that! If you want to be that cool, please spent .2 seconds moving the script.
 - Less is awesome. Never leave home without it.
 
 
@@ -63,9 +68,24 @@ Common packages are included with commented out script tags in the base theme fo
 
 ### Media query helpers
 
-I find it much easier to deal with responsive design by using media query tags such as `media-1`, `media-2`, etc.
+Bootstraps default descriptions are a little confusing. The variable names do not have enough common in the variable names.
 
-In general, always use `media-N` as a min-width. Use the `media-N-max` values as max widths.
+Am I on tablet portrait or phone horizontal right now?
+
+I find it much easier to deal with responsive design by using media query tags which simply indexes smallest-to-largest designs.
+
+
+- @media-1
+- @media-1-max
+- @media-2
+- @media-2-max
+- @media-3
+- @media-3-max
+- @media-4
+- @media-4-max
+
+Use the `media-N` variables for min-width queries.  
+Use the `media-N-max` for max-width queries.
 
 To target browsers between media-1 and media-3 (what bootstrap would call "portrait phones" to "default"): 
 
@@ -77,11 +97,89 @@ To target browsers between media-1 and media-3 (what bootstrap would call "portr
 
 The base theme.html template comes with a simple debug div which displays the current media query range.
 
+For example: `media-2 to media-3-max`.
 
 
-Installation / Usage
---------------------
+
+
+Installation and Usage
+----------------------
 
 Either clone the repository and take the contents, or use it as a template provided to the django-admin.py command.
 
     django-admin.py startproject my_project --template=https://github.com/yuchant/django-boilerplate/archive/master.zip 
+
+
+## Folder Structure
+
+Note: I've set this up to build the project container folder so you will get a triple nested structure if you don't change the name of the root project fodler after running `startproject`. 
+
+Example:
+
+    $ django-admin.py startproject my_awesome_site
+
+Will result in a structure like so:
+
+    ── my_project
+        ├── my_project
+            ├── my_project
+
+
+So rename the top-level my_project to something generic.
+
+The reason I do this is because I want my django project to be in a folder in my virtualenv simply called "django_project". It needs to be consistent across sites so I can easily crawl directories for `django_project/conf/` and auto register supervisor scripts, nginx configurations, etc for multiple sites on one server.
+
+
+    ├── my_project # renamed to something like "django_project"
+    │   ├── conf
+    │   │   ├── gunicorn
+    │   │   │   └── gunicorn.py
+    │   │   ├── nginx
+    │   │   │   └── nginx.conf
+    │   │   └── supervisor
+    │   │       └── gunicorn.conf
+    │   ├── my_project
+    │   │   ├── assets
+    │   │   │   ├── bootstrap
+    │   │   │   ├── css
+    │   │   │   ├── img
+    │   │   │   ├── js
+    │   │   │   └── less
+    │   │   ├── manage.py
+    │   │   ├── my_project
+    │   │   │   ├── __init__.py
+    │   │   │   ├── root_urlconf.py
+    │   │   │   ├── settings.py
+    │   │   │   └── wsgi.py
+    │   │   ├── templates
+    │   │   │   ├── 404.html
+    │   │   │   ├── 500.html
+    │   │   │   ├── _base.html
+    │   │   │   ├── base.html
+    │   │   │   ├── home.html
+    │   │   │   └── theme.html
+    │   │   └── website
+    │   │       ├── __init__.py
+    │   │       ├── models.py
+    │   │       ├── templates
+    │   │       ├── tests.py
+    │   │       ├── urls.py
+    │   │       └── views.py
+    │   ├── README.md
+    │   └── requirements.txt
+
+
+
+## Recommended setup
+
+I'd recommend the following setup:
+
+1: create a virtualenv `virtualenv example.com`
+2: cd into it `cdvirtualenv`
+3: Create the django project `django-admin.py startproject django_project --template=https://github.com/yuchant/django-boilerplate/archive/master.zip` 
+4: cd into the django project container `cd django_project`
+5: install the dependencies: `pip install -r requirements.txt`
+6: cd into the django project itself: `cd django_project`
+7: syncdb: `python manage.py syncdb`
+8: migrate: `python manage.py migrate`
+9: run your dev server: `python manage.py runserver`
