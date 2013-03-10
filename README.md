@@ -8,7 +8,7 @@ World domination can't wait.
 
 ###Django
 
-- Hell yes we'll use the admin, are you kidding me?
+- Hell yes we'll use the admin, are you freakin kidding me?
 - Uses relative settings directory with `PROJECT_DIR` and `SETTINGS_DIR`. How many times have I written that?
 - Global templates dir, `MEDIA_ROOT = 'site_media'`, ` `STATICFILES_DIRS = 'assets'`
 - Why don't we call the `ROOT_URLCONF` `root_urlconf.py` so it can be fuzzy differentiated vs 1000 other `urls.py` mmkay?
