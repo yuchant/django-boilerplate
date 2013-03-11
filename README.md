@@ -9,16 +9,16 @@ World domination can't wait.
 ###Django
 
 - Hell yes we'll use the admin, are you freakin kidding me?
-- Uses relative settings directory with `PROJECT_DIR` and `SETTINGS_DIR`. How many times have I written that?
-- Global templates dir in project root.
+- Use SQLITE by default. If you need to change it, you'd have to change it anyways.
 - `MEDIA_ROOT = 'site_media'`
 - `STATICFILES_DIRS = 'assets'`
+- `TEMPLATE_CONTEXT_PROCESSORS` set to defaults
+- Uses relative settings directory with `PROJECT_DIR` and `SETTINGS_DIR`. How many times have I written that?
+- Global templates dir in project root.
 - Why don't we call the `ROOT_URLCONF` `root_urlconf.py` so it can be fuzzy differentiated vs 1000 other `urls.py` mmkay?
-- Use SQLITE by default. If you need to change it, you'd have to change it anyways.
 - No, we don't need to add anything in the user uploads directory to git.
 - Serve files from `MEDIA_ROOT` @ `MEDIA_URL` when in `DEBUG_MODE`. Runserver now serves `staticfiles` automagically, why the hell not `MEDIA_ROOT`?
 - Start with `website` app for static pages and it even comes with an `IndexView`, imagine that!
-
 
 ###Forcibly installed django apps
 
